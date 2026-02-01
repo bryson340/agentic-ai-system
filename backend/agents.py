@@ -2,10 +2,17 @@ import asyncio
 import urllib.parse
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv # You might need to install this: pip install python-dotenv
+
+# Load environment variables
+load_dotenv()
 
 # ==========================================
-# 🔐 CONFIGURATION
-GOOGLE_API_KEY = "AIzaSyAgPZMCYwIbydCe_4Fwtv6zJ6qq8Hohc4Q"
+# 🔐 SECURE CONFIGURATION
+# We fetch the key securely from the hidden .env file
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+
+# Set to FALSE to use Real AI!
 MOCK_MODE = False
 # ==========================================
 
